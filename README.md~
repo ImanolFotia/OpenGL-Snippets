@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+# Epsilon-Snippets
 
 Modules of the Epsilon Engine (C).
 
@@ -36,3 +38,6 @@ On Windows be sure that you link to the needed dependencies located on your syst
 Survtech Games(C)
 Epsilon Engine(C)
 
+=======
+# OpenGL-Snippets
+>>>>>>> 688da9611e31ccb9ed145c68029c05d4ac91fe3d
