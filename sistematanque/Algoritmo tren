@@ -1,0 +1,47 @@
+extern void sensor1;
+extern void sensor2;
+
+void abrirBarrera();
+void cerrarBarrera();
+
+enum ESTADO_TREN
+{
+    PASANDO = 0,
+    LIBRE,
+    ESPERANDO_SENSOR_2
+}
+
+ESTADO_TREN obtenerEstado(ESTADO_TREN anterior)
+{
+    if(sensor1 == true && sensor2 == false)
+        return PASANDO;
+    if(sensor1 == false && sensor2 == false && anterior == LIBRE)
+        return LIBRE;
+    if(sensor1 == false && sensor2 == false && anterior == PASANDO)
+        return PASANDO;
+    if(sensor1 == false && sensor2 == true)
+        return ESPERANDO_SENSOR_2;
+    if(sensor1 == true && sensor2 == true)
+        return PASANDO;
+
+}
+
+int main()
+{
+    ESTADO_TREN estadoActual, estadoAnterior;
+    estadoActual = obtenerEstado(estadoAnterior);
+    estadoAnterior = obtenerEstado(estadoAnterior);
+
+    while(true)
+    {
+    estadoActual = obtenerEstado(estadoAnterior);
+    if(estadoActual == PASANDO)
+        cerrarBarrera();
+    if(estadoActual == LIBRE)
+        abrirBarrera();
+    if(estadoActual == ESPERANDO_SENSOR_2)
+        cerrarBarrera();
+
+    estadoAnterior = estadoActual;
+    }
+}

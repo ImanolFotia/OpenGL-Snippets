@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1462684485 source:/home/nullptr/Documents/Epsilon Snippets/LuaProject/main.cpp
+	<iostream>
+	<lua.hpp>
+

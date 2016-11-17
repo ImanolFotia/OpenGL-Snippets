@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1458277985 source:/home/nullptr/Documents/Epsilon Snippets/GUI/main.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<iostream>
+	<cstdlib>
+	<shader.h>
+	<glm/glm.hpp>
+	<SOIL.h>
+

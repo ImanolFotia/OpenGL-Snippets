@@ -1,0 +1,19 @@
+#version 120
+
+varying float color;
+varying vec3 FragPos;
+
+uniform float time;
+uniform int ispoint;
+uniform float deltaTime;
+
+void main()
+{
+
+	gl_FragColor = vec4( 0.0, 1.0, 0.0, 1.0);
+
+	
+	
+	if(ispoint == 1)
+		gl_FragColor = clamp(normalize(vec4(mix(0, 1, cos(color - FragPos.x)),  FragPos.y, mix(0, 1, sin(color + FragPos.z)), 1.0)), 0.2, 1.0);	
+}

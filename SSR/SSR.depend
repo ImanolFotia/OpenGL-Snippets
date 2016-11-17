@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1468371563 source:/home/nullptr/Documents/Epsilon Snippets/SSR/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<shader.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+

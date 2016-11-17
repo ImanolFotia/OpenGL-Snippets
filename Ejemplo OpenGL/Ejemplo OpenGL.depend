@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1444065368 source:/home/nullptr/Documents/Epsilon Snippets/Ejemplo OpenGL/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<SOIL.h>
+	<vector>
+	<shader.h>
+
+1215447208 /usr/include/SOIL/SOIL.h
+

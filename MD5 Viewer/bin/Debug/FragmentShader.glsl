@@ -1,0 +1,44 @@
+#version 120
+
+varying vec2 texCoord;
+varying vec3 Normal;
+varying vec3 FragPos;
+
+uniform sampler2D sampler;
+uniform sampler2D n_sampler;
+uniform sampler2D s_sampler;
+uniform vec3 viewPos;
+uniform vec3 lightDir;
+uniform float texmix;
+
+varying vec3 TangentLightDir;
+varying vec3 TangentViewPos;
+varying vec3 TangentFragPos;
+
+varying vec3 OUTTangent;
+varying vec3 OUTBitangent;
+
+void main()
+{
+
+	
+	vec3 norm = normalize(Normal);
+	vec4 color = texture2D(sampler, texCoord);
+	
+	vec4 dis = texture2D(s_sampler, texCoord);
+	vec3 finaltex = mix( color.rgb, dis.rgb,0.0 /*min(texmix, dis.a)*/);
+	vec3 ambient = vec3(0.3) * finaltex;
+	vec3 normaltex = normalize(texture2D(n_sampler, texCoord).rgb * 2.0 - 1.0);
+	  
+    	float diff = max(dot(normaltex, -TangentLightDir), 0.0);
+    	vec3 diffuse = diff * finaltex;
+    	
+    	vec3 viewDir = normalize(TangentViewPos - TangentFragPos);
+    	vec3 halfwayDir = normalize(-TangentLightDir + viewDir);  
+    	float spec = pow(max(dot(normaltex, halfwayDir), 0.0), 128.0);
+    	
+    	vec3 specular = spec  * dis.rgb;
+    	
+	gl_FragColor.rgb = (diffuse + ambient + specular) * 1.7;
+}
+

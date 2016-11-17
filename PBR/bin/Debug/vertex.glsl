@@ -1,0 +1,38 @@
+#version 120
+
+attribute vec3 position;
+attribute vec3 normal;
+attribute vec2 uv;
+attribute vec3 tangent;
+attribute vec3 binormal;
+
+varying vec2 texCoords;
+varying vec3 Normal;
+varying vec3 FragPos;
+varying vec3 Position;
+
+uniform mat4 MVP;
+uniform mat4 model;
+uniform samplerCube cubemap;
+uniform vec3 viewPos;
+
+varying vec3 tanViewPos;
+varying vec3 tanFragPos;
+
+void main()
+{
+	gl_Position = MVP * vec4(position, 1.0f);
+	FragPos = vec3(model * vec4(position, 1.0f));
+	Normal = vec3(model * vec4(normal, 1.0f));
+	texCoords = uv;
+	texCoords = texCoords * 1.0f;
+	Position = position;
+	
+	vec3 T   = normalize(mat3(model) * tangent);
+    	vec3 B   = normalize(mat3(model) * binormal);
+    	vec3 N   = normalize(mat3(model) * normal);
+    	mat3 TBN = transpose(mat3(T, B, N));
+	
+	tanViewPos = TBN * viewPos;
+	tanFragPos = TBN * FragPos;
+}

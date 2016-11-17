@@ -1,0 +1,14 @@
+#version 120
+
+uniform sampler2D sampler;
+
+varying vec2 TexCoords;
+
+uniform float x;
+uniform float y;
+
+void main()
+{
+	vec4 albedo = texture2D(sampler, TexCoords);
+	gl_FragColor = albedo;
+}

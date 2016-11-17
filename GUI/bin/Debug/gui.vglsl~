@@ -1,0 +1,17 @@
+#version 110 
+
+attribute vec3 position;
+attribute vec3 color;
+attribute vec2 UV;
+
+varying vec3 Color;
+varying vec2 TexCoords;
+
+
+uniform vec2 pos;
+void main()
+{
+	gl_Position = vec4(position.x + pos.x, position.y + pos.y, position.z, 1.0f);
+	Color = color;
+	TexCoords = UV;
+}

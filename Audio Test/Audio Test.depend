@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1462670057 source:/home/nullptr/Documents/Epsilon Snippets/Audio Test/audio.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+	"audio.h"
+	"helpers.h"
+
+1441313305 /home/nullptr/Documents/Epsilon Snippets/Audio Test/audio.h
+	<AL/al.h>
+	<AL/alc.h>
+	<vector>
+
+1441314480 source:/home/nullptr/Documents/Epsilon Snippets/Audio Test/main.cpp
+	<iostream>
+	"audio.h"
+	"helpers.h"
+
+1441288913 /home/nullptr/Documents/Epsilon Snippets/Audio Test/helpers.h
+

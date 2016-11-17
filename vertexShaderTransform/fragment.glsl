@@ -1,0 +1,30 @@
+#version 110
+
+varying vec2 UV;
+uniform vec3 viewPos;
+varying vec3 FragPos;
+uniform sampler2D sampler;
+uniform sampler2D samplerd;
+uniform float time;
+uniform float multiplier;
+void main()
+{
+
+	vec3 normal = texture2D(sampler, UV).rbg;
+	vec3 diffuseT = texture2D(samplerd, UV).rgb;
+
+ 	// Diffuse
+    	vec3 lightDir = vec3(0.0, 1.0, 0.0);
+    	vec3 lightDird = vec3(0.5, -1.0, 0.5);
+    	float diff = max(dot(-lightDird, normal), 0.0);
+    	vec3 diffuse = diff * vec3(diffuseT) * vec3(1);
+    	// Specular
+    	vec3 viewDir = normalize(viewPos - FragPos);
+    	vec3 halfwayDir = normalize(lightDir + viewDir);  
+    	float spec = pow(max(dot(normalize(normal), halfwayDir), 0.0), 128.0);
+    	vec3 specular = .5 * spec * vec3(1);
+    
+	gl_FragColor = vec4(texture2D(samplerd, UV).rgb, 1.0);//vec4(diffuse + specular, 1.0f);
+	
+	
+}

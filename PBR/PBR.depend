@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1472222346 source:/home/nullptr/Documents/Epsilon Snippets/PBR/main.cpp
+	<iostream>
+	<vector>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<shader.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"camera.h"
+	<AntTweakBar.h>
+	<SOIL.h>
+	<string>
+
+1472219102 /home/nullptr/Documents/Epsilon Snippets/PBR/camera.h
+	<vector>
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1363811346 /home/nullptr/Documents/Epsilon Snippets/PBR/external/AntTweakBar/include/AntTweakBar.h
+	<stddef.h>
+	<string>
+	<string>
+

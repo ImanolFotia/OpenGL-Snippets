@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1467584732 source:/home/nullptr/Documents/Epsilon Snippets/BMPLoader/main.cpp
+	<iostream>
+	<vector>
+	<BMPLoader.h>
+	<TGALoader.h>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<shader.h>
+
+1467579040 /home/nullptr/Documents/Epsilon Snippets/BMPLoader/include/BMPLoader.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+
+1467583880 source:/home/nullptr/Documents/Epsilon Snippets/BMPLoader/src/BMPLoader.cpp
+	"BMPLoader.h"
+	"BMPFormat.h"
+	<fstream>
+	<cstring>
+
+1467414615 /home/nullptr/Documents/Epsilon Snippets/BMPLoader/include/BMPFormat.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+
+1467584832 source:/home/nullptr/Documents/Epsilon Snippets/BMPLoader/src/TGALoader.cpp
+	<TGAHeader.h>
+	<TGALoader.h>
+	<fstream>
+
+1467584334 /home/nullptr/Documents/Epsilon Snippets/BMPLoader/include/TGAHeader.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+
+1467584335 /home/nullptr/Documents/Epsilon Snippets/BMPLoader/include/TGALoader.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+

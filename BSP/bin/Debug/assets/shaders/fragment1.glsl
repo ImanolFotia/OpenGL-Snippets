@@ -1,0 +1,57 @@
+#version 120
+
+uniform sampler2D sampler;
+uniform sampler2D LightMapsampler;
+uniform sampler2D normalSampler;
+
+uniform vec3 viewPos;
+
+varying vec2 TexCoords;
+varying vec2 LightMapTexCoords;
+
+uniform bool lightmap;
+
+const float offset = 1.0 / 300; 
+vec3 lightPos = vec3(-0.191195, -11.722448, -5.879405);
+vec3 lightColor = vec3(1,1,1);
+vec4 FragColor;
+
+varying vec3 TangentLightPos;
+varying vec3 TangentViewPos;
+varying vec3 TangentFragPos;
+
+varying vec3 OUTTangent;
+varying vec3 OUTBitangent;
+
+#include <file.glsl>
+#include <file2.glsl>
+
+void main()
+{
+	vec4 Color = texture2D(sampler, TexCoords);
+	vec4 LightMap = texture2D(LightMapsampler, LightMapTexCoords);
+	vec3 NormalTex = normalize(texture2D(normalSampler, TexCoords).rgb * 2.0 - 1.0);
+	
+    	// Diffuse
+    	vec3 lightDir = normalize(TangentLightPos - TangentFragPos);
+    	float diff = max(dot(lightDir, NormalTex), 0.0);
+    	vec3 diffuse = diff * Color.rgb;
+    	// Specular
+    	vec3 viewDir = normalize(TangentViewPos - TangentFragPos);
+    	vec3 halfwayDir = normalize(lightDir + viewDir);  
+    	float spec = pow(max(dot(NormalTex, halfwayDir), 0.0), 32.0);
+    	vec3 specular = .5 * spec * vec3(1);
+    
+	LightMap.rgb = pow(LightMap.rgb*4, vec3(1.0/1.3));
+	vec3 ambient = LightMap.r * Color.rgb;
+	FragColor = vec4(ambient + diffuse*LightMap.r + specular*LightMap.r, 1.0f);
+	
+	if(lightmap)
+	gl_FragColor = FragColor;//mix(vec4(0,0,0,1), FragColor, LightMap.r);
+	else	
+	gl_FragColor = FragColor;
+	
+	gl_FragColor.a = 1.0;
+}
+
+ 

@@ -1,0 +1,10 @@
+#version 110
+
+uniform sampler2D texture;
+
+varying float var
+
+void main()
+{
+	gl_FragColor = vec4(var);
+}

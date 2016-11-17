@@ -1,0 +1,148 @@
+#define GLEW_STATIC
+#include <GL/glew.h>
+
+#include <GLFW/glfw3.h>
+
+#include <iostream>
+#include <cstdlib>
+#include <shader.h>
+
+using namespace std;
+
+typedef struct CursorPosition{
+double x;
+double y;
+}curPos;
+
+GLfloat Quad[] = {
+    // Positions          // Colors           // Texture Coords
+     0.5f,  1.0f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // Top Right
+     0.5f,  0.25f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // Bottom Right
+    -1.0f,  0.25f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // Bottom Left
+    -1.0f,  1.0f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // Top Left
+};
+
+    GLuint indices[] = {  // Note that we start from 0!
+        0, 1, 3, // First Triangle
+        1, 2, 3  // Second Triangle
+    };
+
+CursorPosition GetCursor(GLFWwindow* window);
+bool OnClick(CursorPosition Cursor);
+
+curPos cur;
+
+int main()
+{
+    if(!glfwInit())
+    {
+        cout << "GLFW could not be initialized" << endl;
+        return -1;
+    }
+    GLFWwindow* window = glfwCreateWindow(640, 480, "::EPSILON MODULE: GUI::", nullptr, nullptr);
+
+    glfwMakeContextCurrent(window);
+
+    glewExperimental = true;
+
+    if(glewInit() != GLEW_OK)
+    {
+        cout << "GLEW could not be initialized" << endl;
+        glfwTerminate();
+        return -1;
+    }
+
+    glClearColor(.5f, .5f, .5f, 1.0f);
+
+    GLuint VAO, VBO, EBO;
+
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
+
+    glBindVertexArray(VAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Quad), Quad, GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(1);
+
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
+    glBindVertexArray(0);
+
+    GLuint shader = crearShader("gui.vglsl", "gui.fglsl");
+
+    glViewport(0,0,640, 480);
+
+    /** Main Loop*/
+
+    while(!glfwWindowShouldClose(window))
+    {
+        glfwPollEvents();
+
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        cur = GetCursor(window);
+
+        cout << "Mouse Position: " << endl;
+        cout << "X = " << cur.x << "Y = " << cur.y << endl;
+
+        if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+        if(OnClick(cur))
+            return 0;
+
+        glUseProgram(shader);
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
+        glUseProgram(0);
+
+        glfwSwapBuffers(window);
+    }
+}
+
+CursorPosition GetCursor(GLFWwindow* window)
+{
+    curPos Cursor;
+
+    glfwGetCursorPos(window, &Cursor.x, &Cursor.y);
+
+    /** Converting to Viewport Space*/
+
+    Cursor.x = Cursor.x / 640;
+    Cursor.y = Cursor.y / 480;
+
+    /** Converting to normalized device coordinates*/
+
+    Cursor.x = Cursor.x * 2 - 1;
+    Cursor.y = Cursor.y * 2 - 1;
+    Cursor.y *= -1;
+
+    return Cursor;
+}
+
+bool OnClick(CursorPosition Cursor)
+{
+       /** TOP LEFT*/    /** BOTTOM LEFT*/   /**TOP RIGHT*/    /**BOTTOM RIGHT*/
+    if(Cursor.x > -1  && Cursor.x > -1    && Cursor.x < 0.5  &&  Cursor.x < 0.5)
+    {
+    if(Cursor.y < 1  && Cursor.y > 0.25   && Cursor.y < 1.0  &&  Cursor.y > 0.25)
+    {
+    return true;
+    }
+    else
+    return false;
+    }
+    else
+    return false;
+}
+
+

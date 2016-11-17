@@ -1,0 +1,10 @@
+#version 120
+
+varying vec3 TexCoords;
+
+uniform sampler2D skybox;
+
+void main()
+{
+	gl_FragColor = textureCube(skybox, TexCoords);
+}

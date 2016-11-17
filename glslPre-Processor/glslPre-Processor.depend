@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1452408084 source:/home/nullptr/Documents/Epsilon Snippets/glslPre-Processor/main.cpp
+	<iostream>
+	<string>
+	<fstream>
+

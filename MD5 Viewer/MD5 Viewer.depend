@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1444620753 source:/home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"MD5_Anim.h"
+	"MD5_Model.h"
+	<shader.h>
+	<glm/gtc/matrix_transform.hpp>
+	<AntTweakBar.h>
+	"camera.h"
+
+1444174446 source:/home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/MD5_Anim.cpp
+	"MD5_Anim.h"
+	"Helpers.h"
+
+1445545568 /home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/MD5_Anim.h
+	<vector>
+	<string>
+	<iostream>
+	<fstream>
+	<glm/glm.hpp>
+	<glm/gtc/quaternion.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1443927109 /home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/HELPERS.h
+	<fstream>
+	<string>
+	<glm/glm.hpp>
+	<glm/gtc/quaternion.hpp>
+
+1444333247 source:/home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/MD5_Model.cpp
+	"Helpers.h"
+	<iostream>
+	"MD5_Model.h"
+
+1444333135 /home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/MD5_Model.h
+	<GL/glew.h>
+	<string>
+	<vector>
+	<glm/glm.hpp>
+	<glm/gtc/quaternion.hpp>
+	"MD5_Anim.h"
+	<SOIL.h>
+
+1215447208 /usr/include/SOIL/SOIL.h
+
+1444619501 /home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/camera.h
+	<vector>
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1444182646 source:/home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/Helpers.cpp
+	"Helpers.h"
+
+1444182637 /home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/Helpers.h
+	<string>
+	<glm/glm.hpp>
+	<glm/gtc/quaternion.hpp>
+	<fstream>
+	<ctime>
+
+1363811346 /home/nullptr/Documents/Epsilon Snippets/MD5 Viewer/external/AntTweakBar/include/AntTweakBar.h
+	<stddef.h>
+	<string>
+	<string>
+

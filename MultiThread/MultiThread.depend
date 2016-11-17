@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1467408016 source:/home/nullptr/Documents/Epsilon Snippets/MultiThread/main.cpp
+	<iostream>
+	<string>
+	<thread>
+	<SOIL.h>
+	<vector>
+	<cmath>
+

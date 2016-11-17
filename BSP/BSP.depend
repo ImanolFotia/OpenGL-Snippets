@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1467408775 source:/home/nullptr/Documents/Epsilon Snippets/BSP/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<shader.h>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"BSP.h"
+	"camera.h"
+
+1443903421 source:/home/nullptr/Documents/Epsilon Snippets/BSP/BSP.cpp
+	<GL/glew.h>
+	"BSP.h"
+	<glm/glm.hpp>
+	<vector>
+	<iostream>
+	"Frustum.h"
+
+1443900290 /home/nullptr/Documents/Epsilon Snippets/BSP/BSP.h
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<vector>
+	<map>
+	<GLFW/glfw3.h>
+	"BSPFace.h"
+	"Frustum.h"
+
+1443396428 /home/nullptr/Documents/Epsilon Snippets/BSP/camera.h
+	<vector>
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1444922831 /home/nullptr/Documents/Epsilon Snippets/BSP/BSPFace.h
+	<glm/glm.hpp>
+	<GL/glew.h>
+	<iostream>
+	<string>
+	<vector>
+	<SOIL.h>
+
+1215447208 /usr/include/SOIL/SOIL.h
+
+1443467274 /home/nullptr/Documents/Epsilon Snippets/BSP/Frustum.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1443468897 source:/home/nullptr/Documents/Epsilon Snippets/BSP/Frustum.cpp
+	"Frustum.h"
+	<iostream>
+

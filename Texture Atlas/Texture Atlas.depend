@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1442103713 source:/home/nullptr/Documents/Epsilon Snippets/Texture Atlas/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<string>
+	<SOIL/SOIL.h>
+	<shader.h>
+	"sprite.h"
+
+1462551834 /home/nullptr/Documents/Epsilon Snippets/Texture Atlas/sprite.h
+	<string>
+	<GL/glew.h>
+	<iostream>
+	<vector>
+

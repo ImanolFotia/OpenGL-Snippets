@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1455144684 source:/home/nullptr/Documents/Epsilon Snippets/vertexShaderTransform/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<SOIL.h>
+	<vector>
+	<glm/glm.hpp>
+	<shader.h>
+	"camera.h"
+
+1443396428 /home/nullptr/Documents/Epsilon Snippets/vertexShaderTransform/camera.h
+	<vector>
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+

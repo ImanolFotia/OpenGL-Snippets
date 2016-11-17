@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1443988749 source:/home/nullptr/Documents/Epsilon Snippets/VertexDisplace/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<shader.h>
+	<vector>
+

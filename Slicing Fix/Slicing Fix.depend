@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1463883532 source:/home/nullptr/Documents/Epsilon Snippets/Slicing Fix/main.cpp
+	<iostream>
+	<memory>
+

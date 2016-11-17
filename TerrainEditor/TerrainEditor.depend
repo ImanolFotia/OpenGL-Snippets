@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1465301251 source:/home/nullptr/Documents/Epsilon Snippets/TerrainEditor/main.cpp
+	<iostream>
+	<vector>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<shader.h>
+	"camera.h"
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<EpsilonModel.h>
+
+1443396428 /home/nullptr/Documents/Epsilon Snippets/TerrainEditor/camera.h
+	<vector>
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<vector>
+	<GL/glew.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1456580029 /home/nullptr/Documents/Epsilon Snippets/EpsilonModel/EpsilonModel.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+	"ClassModel.h"
+
+1459031762 /home/nullptr/Documents/Epsilon Snippets/EpsilonModel/ClassModel.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<cstdlib>
+	"Types.h"
+	"emlFormat.h"
+
+1456525272 /home/nullptr/Documents/Epsilon Snippets/EpsilonModel/Types.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+
+1458952015 /home/nullptr/Documents/Epsilon Snippets/EpsilonModel/emlFormat.h
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+
